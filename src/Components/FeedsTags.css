@@ -1,0 +1,6 @@
+.tag-box {
+  display: inline-block;
+  color: #5CB85C;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 2px solid #5CB85C;
+}

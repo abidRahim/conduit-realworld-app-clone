@@ -1,0 +1,30 @@
+.display-nav {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: ;
+}
+
+.display-links {
+  display: flex;
+}
+
+.display-links > * {
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+}
+
+.display-links > *:hover {
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5CB85C;
+  cursor: pointer;
+}

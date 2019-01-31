@@ -1,0 +1,13 @@
+.tags-container {
+  width: 25%; 
+  height: auto;
+  background-color: #f3f3f3;
+  border-radius: 0.4em;
+  padding: 0.7em 0.8em;
+  align-self: flex-start;
+}
+
+.h3-text {
+  color: #373a3c;
+  padding-bottom: 0.35em;
+}
