@@ -1,0 +1,35 @@
+.comment-wrapper {
+  margin: 1.2rem 20rem;
+  border-radius: 0.2em;
+  border: 1px solid #e5e5e5;
+}
+
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: #f3f3f3;
+  padding: 0.6em 0.5em;
+}
+
+.size-sm {
+  width: 20px;
+  height: 20px;
+  margin: 4px 8px;
+}
+
+.comment-date, .comment-name {
+  margin: 2px 5px;
+}
+
+.comment-name {
+  font-weight: 300;
+}
+
+.comment-date {
+  padding-top: 4px;
+}
+
+.comment-body {
+  padding: 1.2em 1em;
+}

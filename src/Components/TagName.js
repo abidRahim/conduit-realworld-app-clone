@@ -4,7 +4,7 @@ import './TagName.css';
 class TagName extends Component {
   render() {
     return (
-      <div className="tag-button">dummy</div>
+      <div className="tag-button">{this.props.tag}</div>
     )
   }
 }

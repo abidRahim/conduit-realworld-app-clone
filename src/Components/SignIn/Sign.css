@@ -1,0 +1,56 @@
+.sign-wrapper {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.h2-text {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+.account-check {
+  text-align: center;
+  color: #5CB85C;
+}
+
+.sign-form {
+  display: grid;
+  margin: 1rem 0;
+}
+
+
+.input-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 18px;
+  margin-bottom: 15px;
+  border: 0.8px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+
+}
+
+.form-input:focus {
+  border-color: #3e90c7;
+  outline: none;
+}
+
+.form-input::placeholder {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.4)  
+}
+
+.sign-btn {
+  justify-self: end;
+  background-color: #5CB85C;
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.2em;
+  font-size: 1.2rem;
+  border-radius: 0.3em;
+}

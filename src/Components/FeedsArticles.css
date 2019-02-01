@@ -35,20 +35,23 @@
   cursor: pointer;
 }
 
+.post-name:hover {
+  text-decoration: underline;
+  color: #49a149;
+}
+
 .post-date {
   font-size: 0.7rem;
   color: #bbb;
 }
-
-
-
 
 .favourite-btn {
   display: flex;
   background-color: #fff;
   align-items: center;
   border: 1px solid #5CB85C;
-  border-radius: 0.3em;  
+  border-radius: 0.3em;
+  padding: 0.35em 0.5em;
 }
 
 .favourite-btn:hover {
@@ -84,7 +87,16 @@
   padding-bottom: 15px
 }
 
-.post-display small {
+.article-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.article-footer small {
   color: #bbb;
   font-size: 0.7em;
+}
+
+.article-footer ul {
+  display: inline-block;
 }

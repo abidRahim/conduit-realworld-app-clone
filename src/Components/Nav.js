@@ -8,13 +8,13 @@ class Nav extends Component {
     return (
       <nav className="display-nav wrapper">
           <div className="logo-block">
-            <h3 className="logo">conduit</h3>
+            <h3><Link className="logo" to='/'>conduit</Link></h3>
           </div>
 
           <ul className="display-links">
-            <li><Link className="home-tab">Home</Link></li>
-            <li><Link className="sign-in-tab">Sign In</Link></li>
-            <li><Link className="sign-up-tab">Sign Up</Link></li>
+            <Link to='/'><li className="home-tab">Home</li></Link>
+            <Link to='/signin'><li className="sign-in-tab">Sign In</li></Link>
+            <Link to='/signup'><li className="sign-up-tab">Sign Up</li></Link>
           </ul>
       </nav>
     )

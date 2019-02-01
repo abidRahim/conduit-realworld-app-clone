@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Nav from '../Nav';
 import Hero from '../Hero';
 import Feed from '../Feed';
 import Tags from '../Tags';
+import Loader from '../Loader'
 
 class Home extends Component {
   render() {
     return (
       <div className="appplication">
-        <Nav />
         <Hero />
         <main className="feed-render wrapper">
           <Feed />
