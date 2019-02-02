@@ -3,3 +3,9 @@
   border-bottom: 1px;
   margin-right: 1.2em;
 }
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

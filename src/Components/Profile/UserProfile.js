@@ -46,7 +46,7 @@ class UserProfile extends Component {
         <div className="profile-page">
           <div className="user-info-display">
             <div className="user-profile">
-              <img className="profile-avatar" src={user.profile.image}/>
+              <img className="profile-avatar" src={user.profile.image ? user.profile.image : 'https://static.productionready.io/images/smiley-cyrus.jpg' }/>
               <h2 className="user-name">{user.profile.username}</h2>
             </div>
             <div className="follow-btn-box profile-wrapper">

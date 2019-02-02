@@ -1,12 +1,14 @@
-export const fecthArticles = () => {
+export const fecthArticles = (currentPage, callBack) => {
   return async (dispatch) => {
-    const res = await fetch('https://conduit.productionready.io/api/articles?limit=20&offset=0');
+    const res = await fetch(`https://conduit.productionready.io/api/articles?limit=10&offset=${currentPage*10}`);
     const articlesData = await res.json();
        
     dispatch({
       type: 'FETCH_ARTICLES',
       data: articlesData.articles
     })
+
+    callBack(true)
   }
 };
 

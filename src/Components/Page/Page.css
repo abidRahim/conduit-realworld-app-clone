@@ -1,0 +1,13 @@
+.pagination-box {
+  background-color: #fff;
+  padding: 0.5em 0.8em ;
+  border: 0.5px solid #ddd;
+  color: #5CB85C;
+}
+
+.pagination-box:hover {
+  text-decoration: underline;
+  background-color: #eceeef;
+  color: #3d8b3d;
+  cursor: pointer;
+}

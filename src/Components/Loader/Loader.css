@@ -38,7 +38,7 @@ body {
   height: 0.25em;
   width: 1em;
   border-radius: 50%;
-  background-color: #034466;
+  background-color: #44d144;
   opacity: 0.3;
 }
 .roller, .roller:last-child {
@@ -69,7 +69,7 @@ body {
   display: block;
   width: 15px;
   height: 15px;
-  background: #000;
+  background: #3d8b3d;
   border-radius: 50%;
 }
 @-webkit-keyframes rollercoaster {
