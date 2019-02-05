@@ -1,9 +1,10 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 import React, { Component } from 'react';
 import './Home.css';
 import Hero from '../Hero';
 import Feed from '../Feed';
 import Tags from '../Tags';
-import Loader from '../Loader'
 
 class Home extends Component {
   render() {

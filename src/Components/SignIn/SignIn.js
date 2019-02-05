@@ -1,39 +1,60 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Sign.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchSignInDetails, storeSignInDetails } from '../../actions';
+import './Sign.css';
+
+const mapStateToProps = (state) => {
+  return {
+    userSignin: state.userAuth.signin,
+  };
+};
 
 class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
-    }
-
+      email: '',
+      password: '',
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value});
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { email, password } = this.state;
+    this.props.dispatch(fetchSignInDetails(email, password, (response) => {
+      if (response.status !== 200) {
+        //dispay sign in failure action
+        console.log(response.status);
+      } else {
+        this.props.dispatch(storeSignInDetails(response));
+        sessionStorage.setItem('jwtToken', response.json().user.token);
+      }
+    }));
   }
 
   render() {
-    return (        
+    return (
       <div className="sign-wrapper">
         <div className="sign-textbox">
           <h2 className="h2-text">Sign in</h2>
-          <Link to='/signup'><p className="account-check">Need an account?</p></Link>
+          <Link to="/signup"><p className="account-check">Need an account?</p></Link>
         </div>
-        <form className="sign-form">
+        <form className="sign-form" onSubmit={(e) => { return this.handleSubmit(e); }}>
           <div className="input-list">
             <input className="form-input" type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" />
-            <input className="form-input" type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
+            <input className="form-input" type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
           </div>
-          <button className="sign-btn">Sign In</button>
+          <button type="submit" className="sign-btn">Sign In</button>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default SignIn;
+export default connect(mapStateToProps)(SignIn);

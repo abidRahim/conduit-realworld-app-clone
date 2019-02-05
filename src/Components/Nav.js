@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './Nav.css'
-
+import { Link, NavLink } from 'react-router-dom';
+import './Nav.css';
 
 class Nav extends Component {
   render() {
     return (
       <nav className="display-nav wrapper">
-          <div className="logo-block">
-            <h3><Link className="logo" to='/'>conduit</Link></h3>
-          </div>
+        <div className="logo-block">
+          <h3>
+            <Link className="logo" to="/">conduit</Link>
+          </h3>
+        </div>
 
-          <ul className="display-links">
-            <Link to='/'><li className="home-tab">Home</li></Link>
-            <Link to='/signin'><li className="sign-in-tab">Sign In</li></Link>
-            <Link to='/signup'><li className="sign-up-tab">Sign Up</li></Link>
-          </ul>
+        <ul className="display-links">
+          <NavLink
+            exact
+            to="/"
+            activeClassName="selected"
+          >
+            <li className="home-tab">Home</li>
+          </NavLink>
+          <NavLink
+            to="/signin"
+            activeClassName="selected"
+          >
+            <li className="sign-in-tab">Sign In</li>
+          </NavLink>
+          <NavLink
+            to="/signup"
+            activeClassName="selected"
+          >
+            <li className="sign-up-tab">Sign Up</li>
+          </NavLink>
+        </ul>
       </nav>
-    )
+    );
   }
 }
 

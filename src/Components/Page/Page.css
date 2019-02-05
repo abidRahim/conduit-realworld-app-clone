@@ -11,3 +11,13 @@
   color: #3d8b3d;
   cursor: pointer;
 }
+
+.active {
+  background-color:#5CB85C;
+  color: #ddd;
+}
+
+.active:hover {
+  background-color:#5CB85C;
+  color: #ddd;
+}

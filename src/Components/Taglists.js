@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import './Taglists.css'
+import React, { Component } from 'react';
+import './Taglists.css';
 
 class Taglists extends Component {
   render() {
@@ -9,7 +9,7 @@ class Taglists extends Component {
           {this.props.tag}
         </li>
       </>
-    )
+    );
   }
 }
 
