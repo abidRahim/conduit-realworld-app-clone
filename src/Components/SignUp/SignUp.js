@@ -6,7 +6,7 @@ import '../SignIn/Sign.css';
 
 const mapStateToProps = (state) => {
   return {
-    userSignup: state.userAuth.signup,
+    loggedUser: state.userAuth.loggedUser,
   };
 };
 

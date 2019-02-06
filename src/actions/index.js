@@ -114,7 +114,7 @@ export const fetchSignInDetails = (email, password, callbackResponse) => {
       },
       body: JSON.stringify(data),
     };
-    const signIn = await fetch('https://conduit.productionready.io/api/users/login', config);    
+    const signIn = await fetch('https://conduit.productionready.io/api/users/login', config);
     callbackResponse(signIn);
   };
 };
@@ -122,7 +122,7 @@ export const fetchSignInDetails = (email, password, callbackResponse) => {
 export const storeSignInDetails = (response) => {
   return async (dispatch) => {
     const signInDetails = await response.json();
-    console.log(signInDetails);
+    sessionStorage.setItem('jwtToken', signInDetails.user.token);
 
     dispatch({
       type: 'SIGNIN_RESPONSE',
@@ -130,3 +130,27 @@ export const storeSignInDetails = (response) => {
     });
   };
 };
+
+export const fetchError = (response) => {
+  return async (dispatch) => {
+    const errorDetails = await response.json();
+
+    dispatch({
+      type: 'ERROR_RESPONSE',
+      errorDetails,
+    });
+  };
+};
+
+export const setSessionToken = () => {    
+  let token = sessionStorage.getItem('jwtToken');
+
+  if(!token || token === '') {
+    return;
+  } else {
+    return({
+      type: 'SET_LOG_STATUS_TRUE',
+      status: true,
+    });
+  }
+}

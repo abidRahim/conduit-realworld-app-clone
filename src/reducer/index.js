@@ -33,7 +33,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         userAuth: {
           ...state.userAuth,
-          signup: action.signUpDetails.user,
+          loggedUser: action.signUpDetails.user,
+          error: {},
         },
       };
     case 'SIGNIN_RESPONSE':
@@ -41,9 +42,27 @@ export default function reducer(state = initialState, action) {
         ...state,
         userAuth: {
           ...state.userAuth,
-          signin: action.signInDetails.user,
+          loggedUser: action.signInDetails.user,
+          error: {},
         },
       };
+    case 'ERROR_RESPONSE':
+      return {
+        ...state,
+        userAuth: {
+          ...state.userAuth,
+          error: action.errorDetails,
+        },
+      };
+
+    case 'SET_LOG_STATUS_TRUE':
+      return {
+        ...state,
+        userAuth: {
+          ...state.userAuth,
+          logStatus: true,
+        }
+      }
     default:
       return state;
   }
