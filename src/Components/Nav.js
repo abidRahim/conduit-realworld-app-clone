@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import NavTags_Logged from './NavTags/NavTags_Logged';
-import NavTags_Unlogged from './NavTags/NavTags_Unlogged';
+import { Link } from 'react-router-dom';
+import NavTagsLogged from './NavTags/NavTagsLogged';
+import NavTagsUnlogged from './NavTags/NavTagsUnlogged';
 import './Nav.css';
 
 class Nav extends Component {
@@ -30,10 +30,9 @@ class Nav extends Component {
           </h3>
         </div>
 
-        {(this.state.UserloggedIn) ? <NavTags_Logged /> : <NavTags_Unlogged />}
+        {(this.state.UserloggedIn) ? <NavTagsLogged /> : <NavTagsUnlogged />}
       </nav>
-    );
+    )
   }
 }
-
 export default Nav;

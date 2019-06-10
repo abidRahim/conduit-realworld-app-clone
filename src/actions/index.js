@@ -142,7 +142,7 @@ export const fetchError = (response) => {
   };
 };
 
-export const setSessionToken = () => {    
+export const setSessionToken = () => {
   let token = sessionStorage.getItem('jwtToken');
 
   if(!token || token === '') {

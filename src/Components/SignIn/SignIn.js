@@ -6,7 +6,7 @@ import './Sign.css';
 
 const mapStateToProps = (state) => {
   return {
-    loggedUser: state.userAuth.loggedUser,
+    userAuth: state.userAuth,
     authError: state.userAuth.error || {},
   };
 };
@@ -22,8 +22,11 @@ class SignIn extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+  }
+
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });           
   }
 
   handleSubmit(event) {
@@ -37,7 +40,7 @@ class SignIn extends Component {
         });
         this.props.dispatch(fetchError(response));
       } else {
-        this.props.dispatch(storeSignInDetails(response));        
+        this.props.dispatch(storeSignInDetails(response));
         this.props.dispatch(setSessionToken());
       }
     }));

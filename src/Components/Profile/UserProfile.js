@@ -1,25 +1,23 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions';
 import Loader from '../Loader';
-import FeedsArticles from '../FeedsArticles';
+import UserArticles from '../UserArticles';
 import './UserProfile.css';
-
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user.userProfile,
-    ownArticles: state.user.ownArticles,
-    favouritedArticles: state.user.favouriteArticles,
+    user: state.user.userProfile || {},
+    ownArticles: state.user.ownArticles || {},
+    favouritedArticles: state.user.favouriteArticles || {},
   };
 };
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.feedsTags = ['My Articles', 'Favourited Articles'];
     this.state = {
       isLoading: true,
     };
@@ -38,7 +36,7 @@ class UserProfile extends Component {
 
   render() {
     const { user, favouritedArticles, ownArticles } = this.props;
-
+    
     return (
       <>
         {(this.state.isLoading) ? <Loader /> : (
@@ -61,22 +59,7 @@ class UserProfile extends Component {
               </div>
             </div>
             <div className="profile-wrapper">
-              <nav>
-                <NavLink exact to="/profile/:name" activeClassName="active-tag-box" className="tag-box">My Articles</NavLink>
-                <NavLink exact to="/profile/:name/favourites" activeClassName="active-tag-box" className="tag-box">Favourited Articles</NavLink>
-              </nav>
-              {/* {this.feedsTags.map((val, i) => {
-                return <FeedsTags key={i} tag={val}/>
-              }) } */}
-
-              {favouritedArticles.map((article, index) => {
-                return <FeedsArticles key={index} article={article} />;
-              }) }
-
-              {ownArticles.map((article, index) => {
-                return <FeedsArticles key={index} article={article} />;
-              }) }
-
+              <UserArticles ownArticles={ownArticles} username={user.profile.username} favouriteArticles={favouritedArticles}/>
             </div>
           </div>
         )

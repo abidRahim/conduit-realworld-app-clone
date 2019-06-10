@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../Nav.css';
 
-class NavTags_Unlogged extends Component {
+class NavTagsUnlogged extends Component {
   render() {
     return (
       <ul className="display-links">
@@ -42,4 +42,4 @@ class NavTags_Unlogged extends Component {
   }
 }
 
-export default NavTags_Unlogged;
+export default NavTagsUnlogged;

@@ -1,18 +1,15 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions';
 import Loader from '../Loader';
-import FeedsArticles from '../FeedsArticles';
 import './UserProfile.css';
 
 
 const mapStateToProps = (state) => {
   return {
     user: state.userAuth.loggedUser,
-    // favouritedArticles, 
-    // ownArticles,
   };
 };
 
@@ -26,7 +23,7 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    const username = this.props.match.params.name;
+    // const username = this.props.match.params.name;
     this.props.dispatch(fetchUser(this.props.username, (loaded) => {
       if (loaded) {
         this.setState({
@@ -37,7 +34,7 @@ class UserProfile extends Component {
   }
 
   render() {
-    const { user, favouritedArticles, ownArticles } = this.props;
+    const { user } = this.props;
 
     return (
       <>
@@ -58,22 +55,7 @@ class UserProfile extends Component {
               </div>
             </div>
             <div className="profile-wrapper">
-              <nav>
-                <NavLink exact to="/profile/:name" activeClassName="active-tag-box" className="tag-box">My Articles</NavLink>
-                <NavLink exact to="/profile/:name/favourites" activeClassName="active-tag-box" className="tag-box">Favourited Articles</NavLink>
-              </nav>
-              {/* {this.feedsTags.map((val, i) => {
-                return <FeedsTags key={i} tag={val}/>
-              }) } */}
-
-              {favouritedArticles.map((article, index) => {
-                return <FeedsArticles key={index} article={article} />;
-              }) }
-
-              {ownArticles.map((article, index) => {
-                return <FeedsArticles key={index} article={article} />;
-              }) }
-
+              
             </div>
           </div>
         )

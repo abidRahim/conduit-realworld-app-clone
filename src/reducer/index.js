@@ -3,7 +3,7 @@ const initialState = {
   tags: [],
   user: {},
   article: {},
-  userAuth: {},
+  userAuth: { logStatus: false },
 };
 
 export default function reducer(state = initialState, action) {

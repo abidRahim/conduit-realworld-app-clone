@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Feed from '../Feed';
 import Tags from '../Tags';
 import '../Feed.css';
