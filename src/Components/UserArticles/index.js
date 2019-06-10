@@ -37,8 +37,6 @@ class UserArticles extends Component {
     // } else {
     //   this.ownArticles();
     // } }
-    console.log(this.ownArticles(), 'own Articles');
-    console.log(this.favouritedArticles(), 'fav Articles');
     return (
       <nav>
         <NavLink exact to={`/profile/${username}`} activeClassName="active-tag-box" className="tag-box">My Articles</NavLink>

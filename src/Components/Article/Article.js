@@ -14,8 +14,8 @@ const mapStateToProps = (state) => {
   if (Object.keys(state.article).length) {
     const { currentArticle, articleComments } = state.article;
     return {
-      article: currentArticle,
-      comments: articleComments.comments,
+      article: currentArticle || {},
+      comments: articleComments.comments || {},
     };
   }
 };
